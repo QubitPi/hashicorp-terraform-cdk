@@ -31,9 +31,9 @@ jobs:
           fetch-depth: 0 # gives sentry access to all previous commits
       - name: "Add Git safe.directory" # Go 1.18+ started embedding repo info in the build and e.g. building @cdktf/hcl2json fails without this
         # The Sentry CLI also requires this, https://github.com/actions/checkout/issues/760
-        run: git config --global --add safe.directory /__w/terraform-cdk/terraform-cdk
+        run: git config --global --add safe.directory /__w/hashicorp-terraform-cdk/hashicorp-terraform-cdk
       - name: ensure correct user
-        run: chown -R root /__w/terraform-cdk
+        run: chown -R root /__w/hashicorp-terraform-cdk
       - name: version
         id: get_version
         run: |
@@ -186,7 +186,7 @@ jobs:
           name: dist
           path: dist
       - name: ensure correct user
-        run: chown -R root /__w/terraform-cdk
+        run: chown -R root /__w/hashicorp-terraform-cdk
       - name: Release
         run: npx -p publib publib-npm
         env:
@@ -210,7 +210,7 @@ jobs:
           name: dist
           path: dist
       - name: ensure correct user
-        run: chown -R root /__w/terraform-cdk
+        run: chown -R root /__w/hashicorp-terraform-cdk
       # We use twine directly for publishing instead of publib-pypi
       # Publib-pypi does the same twine command (https://github.com/cdklabs/publib/blob/main/bin/publib-pypi)
       # but also tries to install twine which is already globally
@@ -246,7 +246,7 @@ jobs:
           name: dist
           path: dist
       - name: ensure correct user
-        run: chown -R root /__w/terraform-cdk
+        run: chown -R root /__w/hashicorp-terraform-cdk
       - name: Release
         run: npx -p publib publib-maven
         env:
@@ -276,7 +276,7 @@ jobs:
           name: dist
           path: dist
       - name: ensure correct user
-        run: chown -R root /__w/terraform-cdk
+        run: chown -R root /__w/hashicorp-terraform-cdk
       - name: Release
         run: npx -p publib publib-nuget
         env:
@@ -300,7 +300,7 @@ jobs:
           name: dist
           path: dist
       - name: ensure correct user
-        run: chown -R root /__w/terraform-cdk
+        run: chown -R root /__w/hashicorp-terraform-cdk
       - name: Release
         run: npx -p publib publib-golang
         env:
