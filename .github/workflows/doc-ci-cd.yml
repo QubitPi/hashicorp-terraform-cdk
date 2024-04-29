@@ -8,5 +8,7 @@ name: Documentation CI/CD
       - master
 
 jobs:
-  mk-yml-style-check:
+  documentation-ci-cd:
     uses: QubitPi/hashicorp-dev-portal/.github/workflows/doc-ci-cd.yml@master
+    with:
+      domain: terraform-cdk.qubitpi.org
